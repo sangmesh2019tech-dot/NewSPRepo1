@@ -4,6 +4,7 @@ import requests
 from datetime import datetime, timedelta
 import os
 import feedparser
+import dateparser
 
 # News API Key
 NEWS_API_KEY = "2567749225fc4909a01c07eb408eb458"
@@ -366,4 +367,5 @@ def health_check():
 if __name__ == "__main__":
     debug_mode = os.getenv("FLASK_DEBUG", "True").lower() == "true"
     port = int(os.getenv("PORT", 5000))
+
     app.run(debug=debug_mode, host="0.0.0.0", port=port)
